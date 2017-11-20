@@ -8,7 +8,7 @@ $('ul').on('click', 'span', function(event) {
     $(this).remove();
   });
   event.stopPropagation();
-})
+});
 
 $("input[type='text']").keypress(function(event) {
   //Check if user press is enter
@@ -16,6 +16,10 @@ $("input[type='text']").keypress(function(event) {
     //New todo text
     var todoText = $(this).val();
     //New Li and add to ul
-    $('ul').append('<li><span>X</span> ' + todoText + ' </li>')
+    $('ul').append("<li><span><i class='fa fa-trash'</span> " + todoText + ' </li>')
   }
-})
+});
+
+$('.fa-calendar-plus-o').on('click', function() {
+  $('input[type="text"]').fadeToggle(600);
+});
