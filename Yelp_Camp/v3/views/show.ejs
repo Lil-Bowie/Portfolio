@@ -1,0 +1,17 @@
+<% include partials/header %>
+
+
+<h2><%= cg.name %></h2>
+
+<img src="<%= cg.image %>" alt="">
+
+<p> <%= cg.description %> </p>
+
+<% cg.comments.forEach(function(comment){ %>
+  <p>
+      <strong> <%= comment.author %> </strong>-
+      <%= comment.text %>
+  </p>
+<%})%>
+
+<% include partials/footer %>
