@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+
+
+<h2><%= cg.name %></h2>
+
+<img src="<%= cg.image %>" alt="">
+
+<p> <%= cg.description %> </p>
+
+<% cg.comments.forEach(function(comment){ %>
+  <p>
+      <strong> <%= comment.author %> </strong>-
+      <%= comment.text %>
+  </p>
+<%})%>
+
+<a href="/campground/<%= cg._id %>/comments/new" class="btn-primary btn-lg"> Comment </a>
+
+
+<% include ../partials/footer %>
